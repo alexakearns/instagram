@@ -135,3 +135,12 @@ Generate 'Users' controller with `rails g controller users new create`
 Generate 'User' model with schema `rails g model user username:string:uniq name:string{60} password_digest:string`  
 Create database `rails db:create`
 Migrate database `rails db:migrate`  
+
+ - [ ] User Story 1
+
+> As a User  
+> So that I can become a member   
+> I would like to sign up to Instagram with an account
+
+* Create feature test for root to users#new  
+* Feature test for sign up with correct details and routing
