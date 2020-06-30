@@ -131,4 +131,7 @@ SimpleCov and SimpleCov console added to Gemfile for coverage and Rubocop for li
 bundle install
 ```
 
-
+Generate 'Users' controller with `rails g controller users new create`  
+Generate 'User' model with schema `rails g model user username:string:uniq name:string{60} password_digest:string`  
+Create database `rails db:create`
+Migrate database `rails db:migrate`  
