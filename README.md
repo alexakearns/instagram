@@ -115,3 +115,20 @@ Project to create and Instagram clone using Ruby on Rails
 > So I can get my friends to use Instagram too  
 > I would like it to have a nice UI
 
+
+## Journal
+
+New rails application with postgresql database
+```
+rails new instagram --database=postgresql
+```
+Added Rspec
+```
+rails generate rspec:install
+```
+SimpleCov and SimpleCov console added to Gemfile for coverage and Rubocop for linting
+```
+bundle install
+```
+
+
