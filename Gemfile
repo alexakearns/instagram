@@ -58,6 +58,7 @@ group :test do
   # Coverage with simplecov
   gem 'simplecov', '~> 0.17.1', require: false
   gem 'simplecov-console', require: false
+  gem 'rake'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
