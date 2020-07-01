@@ -1,21 +1,22 @@
 language: ruby
-rvm: 
-  - 2.7.0
+rvm:
+- 2.7.0
 services: postgresql
-bundler_args: --jobs=2
+bundler_args: "--jobs=2"
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - bundle exec rails db:setup
-  - bundle exec rspec
+- bundle exec rails db:setup
+- bundle exec rspec
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -d
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -d"
 cache: bundler
 deploy:
   skip_cleanup: true
   provider: heroku
-  api_key: 
-    secure: k7xHSIysTEavAq1AMLiFHu5wKSU5mrAiNZwiBkRlJcwTSdqQbiR/LbfH4NmY3Dv7sRCvPOxGBXeoh4FbzFW8fGzpwpskC/VY+SC+JZR6qX/JCptDC0UP2IvEUEY8SNrAwwFoiaGKIEKN5nSRHZLYOPNdamjt2HJ5+uFdEGRN4qVXXePsyW2NapOLnRSRv0EHXEHGH4KixUQ+NSXvxV1GJ4plToo1OK8sRIXSgRIrb9GzUReOorcrYy712EIqVUncWYi0hbw+A+ZhH1swZNQRqJhuZCueyFUWItsAlKVGKxyftHAjrfXDbn5a4BpUw+/kCxDgjF8BgZ+RCxe3ZRsYB17n3B0vF0GWNnf7q1/XunTxXKmgTV60X+PySja+YhD3Hs7Mroahvu3vVGJY3uHCV5O59Tg2LDXHDKZk/U+JDyKLtVegwY2N+dup9I/oHjikbvGevjshin96tHMQmW4qQHXUv0Nl8uUVrjYAGL987a9Z2OkhIQx4aMrG9wD2RD5EExm6HUxUNmMBK+F3XEYqwtc4pYkQV8JZI77NGJGMz65azHoUnNFE6VfV545r6NoD9nE87DxRTHM4yvu4wMY/DCskAqH4gypc+qWPfzRM4Atg3PjzGZKUb+oWLe92fF9AZC088gj03kcpr08r9ToMZWW0h8Ig95RerQECJJmz6NY=
+  api_key:
+    secure: fGLuCoAgZsc2v8L58cSvbu/9tupmHe4T4MBye8QbhSzKUSETy2GN1MQmTAuULjKhads5NLl+sgl4HWb52fIz1/8gYJ64GwLJy6PwkZFnv3+pYYVIyYyZMZJkkzblFWGuiKbfvwXkyucw1+63ocTJjaOTJqm20HpQ14YUu5eVMiBKWcwwdbB68rm8SbSRd7FlHR5fFCNBc/LDmp41IqOMY2mSpxNNUnQG9mGsb/T5a8h+pl5rc/jk75BwvqXvYuVVRMXpmo8F3IJyfBsVXrmItL8rpiUftJzWTS/+uvvtRKhzJjgANEhgnuHcnCZaIALdbP/YWqTcvHSv1vTytTkpUjXPo8m/o2bA7adW5UL0cQyqt9jOdgwaSUgYaq1QD7NekKuCUQydBAtosz/O10CVG7Wl7c7sr0p/PUXzUnYJgQXMZ3pQqCzQmk2P6oWOeSLn06DWgidWujj55KgxNO87MPZdvBA68MpvwQlrMi0sKQUPFR5BEqNinPSJjH4YXdm5+w8SvfWnUIIT6DJy2tcu5L87rBxPd+XfeATlPJWevnqF2vMzZW0/MACetuzOqlgJ8vQQn7zdMiFMbo7xdDNb72pbNzZ/NXH3MTPl88OfntfY6IO04NYUVLXFbyLKINlQB/UHbWv/zr3asMWkw7Ar3NwHpARGhXywlM8v0P0Lzag=
   app: clone-the-gram
