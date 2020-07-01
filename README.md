@@ -144,3 +144,11 @@ Migrate database `rails db:migrate`
 
 * Create feature test for root to users#new  
 * Feature test for sign up with correct details and routing
+
+
+Add form on users#new for sign up
+
+
+
+
+Travis.yml
